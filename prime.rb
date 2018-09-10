@@ -1,4 +1,4 @@
-require 'benchmark'  # => true
+require 'benchmark'
 
 # https://en.wikipedia.org/wiki/Primality_test 6k+1
 def prime? int
@@ -10,4 +10,4 @@ def prime? int
     return false if int % i == 0 || int % (i + 2) == 0
   end
   true
-end                                                     # => :prime?
+end
