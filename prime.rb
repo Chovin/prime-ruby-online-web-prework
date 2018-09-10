@@ -2,7 +2,7 @@ require 'benchmark'
 
 # https://en.wikipedia.org/wiki/Primality_test 6k+1
 def prime? int
-  return false if int < 1
+  return false if int <= 1
   return true if int <= 3
   return false if int % 2 == 0 || int % 3 ==0
   max = Math.sqrt(int)
