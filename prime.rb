@@ -3,13 +3,14 @@ require 'benchmark'  # => true
 def prime? int
   max = math.sqrt(int)
   (2..9)
-end
+end                     # => :prime?
 
-(2..9).to_a
+(2..9).map {|x| Math.sqrt x}  # ~> NoMethodError: undefined method `sqrt' for main:Object
 
-# ~> LoadError
-# ~> cannot load such file -- math
+# ~> NoMethodError
+# ~> undefined method `sqrt' for main:Object
 # ~>
-# ~> /usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
-# ~> /usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
-# ~> prime.rb:2:in `<main>'
+# ~> prime.rb:8:in `block in <main>'
+# ~> prime.rb:8:in `each'
+# ~> prime.rb:8:in `map'
+# ~> prime.rb:8:in `<main>'
